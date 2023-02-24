@@ -9,8 +9,20 @@ import { CarritoComponent } from './component/carrito/carrito.component';
 import { ProductoComponent } from './component/producto/producto.component';
 import { AgregarProductoComponent } from './component/agregar-producto/agregar-producto.component';
 import { ModificarProductoComponent } from './component/modificar-producto/modificar-producto.component';
+import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
+const appRoutes:Routes=[
+  {path:'',component:HomeComponent},
+  {path:'historial',component:HistorialComponent},
+  {path:'carrito',component:CarritoComponent},
+  {path:'agregar',component:AgregarProductoComponent},
+  {path:'editar',component:ModificarProductoComponent},
+  {path:'eliminar',component:ProductoComponent}
+]
 
 @NgModule({
+
   declarations: [
     AppComponent,
     HomeComponent,
@@ -22,7 +34,9 @@ import { ModificarProductoComponent } from './component/modificar-producto/modif
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
