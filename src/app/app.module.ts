@@ -11,6 +11,9 @@ import { AgregarProductoComponent } from './component/agregar-producto/agregar-p
 import { ModificarProductoComponent } from './component/modificar-producto/modificar-producto.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ApiRestService } from './service/api-rest.service';
+import { HttpClientModule } from '@angular/common/http';
+import { CarritoService } from './service/carrito/carrito.service';
 
 const appRoutes:Routes=[
   {path:'',component:HomeComponent},
@@ -36,9 +39,10 @@ const appRoutes:Routes=[
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ApiRestService,CarritoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

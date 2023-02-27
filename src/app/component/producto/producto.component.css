@@ -1,10 +1,11 @@
 .card_product {
-    width: 235px;
-    height: 350px;
+    width: 205px;
+    height: 260px;
     background-color: #d9f1fa;
     border-radius: 10%;
     box-shadow: 5px 5px 10px #0B5ED7;
     margin: 15px;
+    border: solid 1px black;
 }
 
 .img_product {
@@ -16,4 +17,10 @@
 .input {
     width: 65px;
     align-items: center;
+}
+
+.title{
+    color: black;
+    text-shadow: 2px 2px 3px #0B5ED7;
+
 }

@@ -1,1 +1,5 @@
-<app-producto></app-producto>
+<div class="container">
+    <div class="row">
+        <app-producto *ngFor="let producto of productPagination.content " [producto]="producto" class="col "></app-producto>
+    </div>
+</div>
