@@ -1,1 +1,30 @@
-<p>historial works!</p>
+<form class="form-group" style="margin: 40px; border: solid;" *ngFor="let purchase of purchases">
+    <div class="form-group row">
+        <div class="form-group col col-3">
+            <label for="id">Date</label>
+            <p>{{purchase.date}}</p>
+        </div>
+        <div class="form-group col col-2">
+            <label for="id">Tipo de documento</label>
+            <p>{{purchase.idType}}</p>
+        </div>
+        <div class="form-group col col-3">
+            <label for="id">Nombre Cliente</label>
+            <p>{{purchase.clientName}}</p>
+        </div>
+        <div class="form-group col col-2">
+            <label for="id">Id Producto</label>
+            <div *ngFor="let producto of purchase.products">
+                <p>{{producto.productId}} <br></p>
+            </div>
+        </div>
+        <div class="form-group col col-2">
+            <label for="id">Cantidad</label>
+            <div *ngFor="let producto of purchase.products">
+                <p>{{producto.quantity}} <br></p>
+            </div>
+        </div>
+    </div>
+</form>
+
+

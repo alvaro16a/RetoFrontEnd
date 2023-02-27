@@ -11,11 +11,11 @@ import { ApiRestService } from 'src/app/service/api-rest.service';
 export class HomeComponent implements OnInit{
 
   productPagination: ProductPaginationModel;
+  products:ProductModel[];
   
   
   constructor(private apiRest: ApiRestService){}
   ngOnInit(): void {
-    this.apiRest.getProducts(0,4).subscribe(productosPaginacionAsincronos => this.productPagination=productosPaginacionAsincronos); 
+    this.apiRest.getProducts(0,10).subscribe(productosPaginacionAsincronos => this.productPagination=productosPaginacionAsincronos); 
   }
-
 }

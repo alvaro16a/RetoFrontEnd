@@ -1,1 +1,24 @@
-<p>carrito works!</p>
+<div class="container">
+    <div class="row">
+        <app-producto *ngFor="let producto of products " [productoCarrito]="producto" [mode]="'carrito'"
+            class="col"></app-producto>
+    </div>
+</div>
+
+
+
+<form class="form-group row posicion">
+    {{mensaje}}
+    <div class="row">
+        <div class="form-group col-7">
+            <input type="text" name="clientName" [(ngModel)]="clientName" placeholder="Client Name"
+                class="form-control input" (ngModelChange)="checkPossible()">
+        </div>
+        <div class="form-group col-5">
+            <input type="text" name="idType" [(ngModel)]="idType" placeholder="id Type"
+                class="form-control input" (ngModelChange)="checkPossible()">
+        </div>
+    </div>
+</form>
+
+<button class="btn btn-primary boton" [disabled]="disable" (click)="makePurchase()">Realizar compra</button>

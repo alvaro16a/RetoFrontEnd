@@ -11,7 +11,10 @@ import { CarritoService } from 'src/app/service/carrito/carrito.service';
 export class ProductoComponent {
 
   constructor(private carritoService:CarritoService){}
+
+  @Input() mode: 'producto' | 'carrito' | 'crear' = 'producto'
   @Input() producto: ProductModel;
+  @Input() productoCarrito: ProductCarritoModel;
   cantidad:number=0;
   disable:boolean=true;
   private productToShopping: ProductCarritoModel;
@@ -31,6 +34,12 @@ export class ProductoComponent {
       quantity:this.cantidad
     }
     this.carritoService.addProduct(this.productToShopping);
+    console.log("se envio al carrito")
+    console.log(this.productToShopping)
+  }
+
+  deleteProduct(){
+    this.carritoService.deleteProduct(this.productoCarrito);
   }
   
 }

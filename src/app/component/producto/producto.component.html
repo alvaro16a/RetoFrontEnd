@@ -1,5 +1,4 @@
-<form class="form-group row card_product">
-
+<form class="form-group row card_product" *ngIf="mode==='producto'">
     <div class="row">
         <div class="form-group col-12">
             <H3 class="title" style="text-align: center;">{{producto.name}}</H3>
@@ -26,4 +25,72 @@
     <div class="col-8">
         <input type="submit" value="Comprar" class="btn btn-primary col-12" style="margin-top: 20px;" [disabled]="disable" (click)="senToShoppingCart()">
     </div>
+</form>
+
+<form class="form-group row card_product_carrito" *ngIf="mode ==='carrito'">
+    <div class="row">
+        <div class="form-group col-12">
+            <H4 class="title" style="text-align: center;">{{productoCarrito.name}}</H4>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-7">
+            <h6 for="nombre" style="text-align: center;">Cantidad:</h6>
+        </div>                                          
+        <div class="form-group col-5">
+            <input type="number" name="cantidad" [(ngModel)]="productoCarrito.quantity" id="cantidad" value="" class="form-control input">
+        </div>
+    </div>
+ 
+    <div class="col-12">
+        <input type="submit" value="No comprar" class="btn btn-primary col-12" style="margin-top: 20px;" (click)="deleteProduct()">
+    </div>
+</form>
+
+<form class="form-group row card_product_crear" *ngIf="mode==='crear'">
+    <div class="row" style="margin-top: 25px;">
+        <div class="form-group col-7">
+            <H4  style="text-align: center;">Nombre del producto</H4>
+        </div>
+        <div class="form-group col-5">
+            <input type="text" name="nombre"  class="form-control">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-7">
+            <H4  style="text-align: center;">Cantidad en inventario</H4>
+        </div>
+        <div class="form-group col-5">
+            <input type="text" name="inventario"  class="form-control">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-12">
+            
+            <h3 style="text-align: center;"><input type="checkbox" id="disponible" value="disponible"> Producto Disponible</h3><br>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-7">
+            <H4  style="text-align: center;">Cantidad Minima permitida</H4>
+        </div>
+        <div class="form-group col-5">
+            <input type="number" name="inventario"  class="form-control">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-7">
+            <H4  style="text-align: center;">Cantidad Maxima permitida</H4>
+        </div>
+        <div class="form-group col-5">
+            <input type="number" name="inventario"  class="form-control">
+        </div>
+    </div>
+
+
 </form>

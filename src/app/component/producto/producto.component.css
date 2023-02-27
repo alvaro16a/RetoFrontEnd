@@ -7,6 +7,26 @@
     margin: 15px;
     border: solid 1px black;
 }
+.card_product_carrito {
+    width: 160px;
+    height: 200px;
+    background-color: #d9f1fa;
+    border-radius: 10%;
+    box-shadow: 5px 5px 10px #0B5ED7;
+    margin: 15px;
+    border: solid 1px black;
+}
+
+.card_product_crear {
+    width: 450px;
+    height: 700px;
+    background-color: #d9f1fa;
+    border-radius: 10%;
+    box-shadow: 5px 5px 10px #0B5ED7;
+    margin: 15px;
+    border: solid 1px black;
+}
+
 
 .img_product {
     border-radius: 11%;

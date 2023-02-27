@@ -10,12 +10,26 @@ export class CarritoService {
   private products: ProductCarritoModel[]=[];
 
   addProduct(productAdd:ProductCarritoModel){
-    this.products.filter(product => product.productId != productAdd.productId);
-    this.products.push(productAdd);
+    
+    console.log(this.products.push(productAdd));
+    localStorage.setItem('products',JSON.stringify(this.products))
   }
 
   getProducts(){
-    return this.products;
+    console.log("me llamaron");
+    console.log(this.products);
+    return JSON.parse(localStorage.getItem('products') || "[]");  
+  }
+
+  deleteProduct(productDelete:ProductCarritoModel){
+    let products:ProductCarritoModel[]=this.getProducts();
+    console.log(productDelete)
+    console.log(products)
+    products=products.filter(product => product.productId !== productDelete.productId);
+    console.log(products)
+    localStorage.removeItem('products');
+    localStorage.setItem('products',JSON.stringify(products));
+    window.location.reload();
   }
 
 }
