@@ -3,3 +3,23 @@
         <app-producto *ngFor="let producto of productPagination.content " [producto]="producto" [mode]="'producto'" class="col"></app-producto>
     </div>
 </div>
+
+<form class="form-group row posicion">
+    <div class="row">
+        <div class="form-group col-4">
+            <label >Pagina</label>
+            <input type="number" name="clientName" [(ngModel)]="page" placeholder="Client Name"
+                class="form-control input" (ngModelChange)="actualizar()">
+        </div>
+        <div class="form-group col-4">
+            <label >Tamaño</label>
+            <input type="number" name="size" [(ngModel)]="size" 
+                class="form-control input" (ngModelChange)="actualizar()">
+        </div>
+        <div class="form-group col-4">
+            <label >Numero de Paginas</label>
+            <input type="number" name="idType" [(ngModel)]="nPagina" 
+                class="form-control input" (ngModelChange)="actualizar()">
+        </div>
+    </div>
+</form>

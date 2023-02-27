@@ -12,10 +12,19 @@ export class HomeComponent implements OnInit{
 
   productPagination: ProductPaginationModel;
   products:ProductModel[];
-  
+  page:number=0;
+  size:number=5;
+  nPagina:number;
   
   constructor(private apiRest: ApiRestService){}
   ngOnInit(): void {
-    this.apiRest.getProducts(0,10).subscribe(productosPaginacionAsincronos => this.productPagination=productosPaginacionAsincronos); 
+    this.apiRest.getProducts(this.page,this.size).subscribe(productosPaginacionAsincronos => this.productPagination=productosPaginacionAsincronos);
+    this.nPagina=this.productPagination.totalPages; 
+  }
+
+  
+  actualizar(){
+    this.apiRest.getProducts(this.page,this.size).subscribe(productosPaginacionAsincronos => this.productPagination=productosPaginacionAsincronos);
+    this.nPagina=this.productPagination.totalPages; 
   }
 }
